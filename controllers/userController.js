@@ -36,7 +36,7 @@ exports.loginController = async (req, res) => {
     const existingUser = await users.findOne({ email: email });
     if (existingUser) {
       if (existingUser.password === password) {
-        const token = jwt.sign({ userMail: existingUser.email }, "secretKey");
+        const token = jwt.sign({ id:existingUser._id,email: existingUser.email,role:existingUser.role },process.env.secretKey);
         res.status(200).json({existingUser,token});
       } else {
         res.status(400).json("password does not match");

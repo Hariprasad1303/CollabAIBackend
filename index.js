@@ -30,6 +30,7 @@ collabaiServer.listen(4000,()=>{
     console.log(`server running in ${PORT}`)
 })
 
+
 //GET THE SERVER
 collabaiServer.get('/',(req,res)=>{
     res.status(200).send("<h1>Collabaai server started</h1>")
