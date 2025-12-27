@@ -1,11 +1,17 @@
 //import express
 const express=require("express");
 
+//import dotenv
+require("dotenv").config()
+
 //import route
 const route=require("./route")
 
 //import cors
 const cors=require("cors")
+
+//import dbconnection.js
+require("./dbConnection");
 
 //creaet server using express method
 const collabaiServer=express();
